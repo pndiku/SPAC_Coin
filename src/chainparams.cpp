@@ -59,16 +59,16 @@ public:
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
-        //genesis.nTime = 1508256000
-        //genesis.nNonce = 99278
+        //genesis.nTime = 1508324400
+        //genesis.nNonce = 1085229
         //genesis.nVersion = 1
-        //genesis.GetHash = 00000b10bb0b10999b6bdae068317b90e8770ff8c28dd206e3d131c9b65d257e
-        //genesis.hashMerkleRoot = 287ad74b0ffdf4a2aee1438d3a17b71cb7ca0bdaeede3fee8d44e9ae5aff1959
+        //genesis.GetHash = 0000000cc09e44c6f0d8eb0c6f75ac81854268acbc070f1df124f83667a14e64
+       //genesis.hashMerkleRoot = 34f6fd28e48c727446eb364be2c3b5bbcd56039cd52cc9d0d1c86645ff015c6f
 
 
-        const char* pszTimestamp = "2017, November 14, Single Productive African Coin";
+        const char* pszTimestamp = "2017, November 18, Single Productive African Coin";
         CTransaction txNew;
-        txNew.nTime = 1508256000;
+        txNew.nTime = 1508324400;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -77,9 +77,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1508256000;
+        genesis.nTime    = 1508324400;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 99278;
+        genesis.nNonce   = 1085229;
 // uncomment to log genesis block info
 //      //  start
 /*        if (true && genesis.GetHash() != hashGenesisBlock)
@@ -114,8 +114,8 @@ public:
 
 //        //end*/
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000b10bb0b10999b6bdae068317b90e8770ff8c28dd206e3d131c9b65d257e"));
-        assert(genesis.hashMerkleRoot == uint256("0x287ad74b0ffdf4a2aee1438d3a17b71cb7ca0bdaeede3fee8d44e9ae5aff1959"));
+        assert(hashGenesisBlock == uint256("0x0000000cc09e44c6f0d8eb0c6f75ac81854268acbc070f1df124f83667a14e64"));
+        assert(genesis.hashMerkleRoot == uint256("0x34f6fd28e48c727446eb364be2c3b5bbcd56039cd52cc9d0d1c86645ff015c6f"));
 
         vSeeds.push_back(CDNSSeedData("nodea.SpacCoin.com", "nodea.SpacCoin.com"));
         vSeeds.push_back(CDNSSeedData("nodeb.SpacCoin.com", "nodeb.SpacCoin.com"));
@@ -153,12 +153,11 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        //genesis.nTime = 1508256000
-        //genesis.nNonce = 63704
+        //genesis.nTime = 1508324400
+        //genesis.nNonce = 15586
         //genesis.nVersion = 1
-        //genesis.hashMerkleRoot = 287ad74b0ffdf4a2aee1438d3a17b71cb7ca0bdaeede3fee8d44e9ae5aff1959
-        //genesis.GetHash = 0000f5b356612ddc560aa7ba3fe28f09c724a34083667cf206d5686c06390710
-
+        //genesis.hashMerkleRoot = 34f6fd28e48c727446eb364be2c3b5bbcd56039cd52cc9d0d1c86645ff015c6f
+        //genesis.GetHash = 0000557fbd2ca57ddbe5d8a0b075df71fd4b1d0d69137232d4d3e693d6af487e
 
 
         pchMessageStart[0] = 0xfd;
@@ -173,7 +172,7 @@ public:
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 63704;
+        genesis.nNonce = 15586;
 //uncomment to log genesis block info
 //
 /*          if (true && genesis.GetHash() != hashGenesisBlock)
@@ -208,7 +207,7 @@ public:
 
 //*/
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000f5b356612ddc560aa7ba3fe28f09c724a34083667cf206d5686c06390710"));
+        assert(hashGenesisBlock == uint256("0x0000557fbd2ca57ddbe5d8a0b075df71fd4b1d0d69137232d4d3e693d6af487e"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -229,11 +228,11 @@ static CTestNetParams testNetParams;
 
 //
 // Regression test
-//genesis.nTime = 1508256000
+//genesis.nTime = 1508324400
 //genesis.nNonce = 0
 //genesis.nVersion = 1
-//genesis.hashMerkleRoot = 287ad74b0ffdf4a2aee1438d3a17b71cb7ca0bdaeede3fee8d44e9ae5aff1959
-//genesis.GetHash = 262200031538e2f55244ad54372b89596a75ff079847f38ace8508f2266dbeef
+//genesis.hashMerkleRoot = 34f6fd28e48c727446eb364be2c3b5bbcd56039cd52cc9d0d1c86645ff015c6f
+//genesis.GetHash = 61f800cce5d21822c3cc01d316417f1991e4018a73fd01cb22877c692fb56089
 
 
 
@@ -245,7 +244,7 @@ public:
         pchMessageStart[2] = 0xbd;
         pchMessageStart[3] = 0xcd;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
-        genesis.nTime = 1508256000;
+        genesis.nTime = 1508324400;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 0;
         hashGenesisBlock = genesis.GetHash();
@@ -284,7 +283,7 @@ public:
                          }
 
 //*/
-        assert(hashGenesisBlock == uint256("0x262200031538e2f55244ad54372b89596a75ff079847f38ace8508f2266dbeef"));
+        assert(hashGenesisBlock == uint256("0x61f800cce5d21822c3cc01d316417f1991e4018a73fd01cb22877c692fb56089"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
